@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MainTabItemView">
+        <attr name="itemImg" format="reference"/>
+        <attr name="itemImgSelected" format="reference"/>
+        <attr name="itemTitle" format="string|reference"/>
+        <attr name="itemTitleColor" format="reference|color"/>
+        <attr name="itemTitleColorSelected" format="reference|color"/>
+        <attr name="dotVisible" format="boolean"/>
+        <attr name="unreadNumVisible" format="boolean"/>
+        <attr name="unreadNum" format="string"/>
+        <attr name="itemStateSelected" format="boolean"/>
+    </declare-styleable>
+</resources>

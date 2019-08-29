@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@id/tabsItemView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/tabsItemView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <com.yzz.great.view.MainTabItemView
+            android:id="@+id/homeTabItemView"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            app:itemImg="@mipmap/ic_tab_mine"
+            app:itemImgSelected="@mipmap/ic_tab_mine_selected"
+            app:itemStateSelected="true"
+            app:itemTitle="主页"
+            app:unreadNum="111" />
+
+        <com.yzz.great.view.MainTabItemView
+            android:id="@+id/home1TabItemView"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            app:dotVisible="true"
+            app:itemImg="@mipmap/ic_tab_mine"
+            app:itemImgSelected="@mipmap/ic_tab_mine_selected"
+            app:itemTitle="主页2" />
+
+        <com.yzz.great.view.MainTabItemView
+            android:id="@+id/home2TabItemView"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            app:itemImg="@mipmap/ic_tab_mine"
+            app:itemImgSelected="@mipmap/ic_tab_mine_selected"
+            app:itemTitle="主页3"
+            app:unreadNum="1" />
+
+        <com.yzz.great.view.MainTabItemView
+            android:id="@+id/mineTabItemView"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            app:itemImg="@mipmap/ic_tab_mine"
+            app:itemImgSelected="@mipmap/ic_tab_mine_selected"
+            app:itemTitle="我的"
+            app:unreadNum="9999+" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
