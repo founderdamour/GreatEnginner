@@ -19,6 +19,12 @@ public class HomeFragment extends Fragment {
         if (rootView == null) {
             rootView = inflater.inflate(R.layout.fragment_home, container, false);
         }
+        rootView.findViewById(R.id.tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                throw new RuntimeException("测试测试");
+            }
+        });
         return rootView;
     }
 }

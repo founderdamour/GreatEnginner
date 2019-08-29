@@ -8,10 +8,12 @@ import com.yzz.great.view.MainTabItemView
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.ArrayList
 
+/**
+ * 应用程序主界面
+ */
 class MainActivity : AppCompatActivity(), MainTabItemView.OnTabItemStateChangeListener {
 
     private val tabs = ArrayList<MainTabItemView>()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +48,7 @@ class MainActivity : AppCompatActivity(), MainTabItemView.OnTabItemStateChangeLi
     }
 
     override fun shouldChangeTabItemState(tabItemView: MainTabItemView?): Boolean {
+        // 点击的是当前条目，不做切换操作
         return !tabItemView!!.isItemStateSelected
     }
 
@@ -75,6 +78,9 @@ class MainActivity : AppCompatActivity(), MainTabItemView.OnTabItemStateChangeLi
         }
     }
 
+    /**
+     * 设置相应索引处的fragment
+     */
     @Throws(Exception::class)
     private fun setIndex(index: Int) {
         val fragmentManager = supportFragmentManager
@@ -108,10 +114,13 @@ class MainActivity : AppCompatActivity(), MainTabItemView.OnTabItemStateChangeLi
 
     private fun handleNewIntent(intent: Intent) {
         val tabId = intent.getIntExtra(Constant.KEY_INDEX, Constant.INDEX_HOME)
-        changeTab(tabId)
+        switchTab(tabId)
     }
 
-    private fun changeTab(index: Int) {
+    /**
+     * 切换main界面tab
+     */
+    private fun switchTab(index: Int) {
         if (isFinishing) {
             return
         }
