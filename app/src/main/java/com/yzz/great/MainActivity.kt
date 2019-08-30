@@ -11,7 +11,7 @@ import java.util.ArrayList
 /**
  * 应用程序主界面
  */
-class MainActivity : AppCompatActivity(), MainTabItemView.OnTabItemStateChangeListener {
+class MainActivity : BaseActivity(), MainTabItemView.OnTabItemStateChangeListener {
 
     private val tabs = ArrayList<MainTabItemView>()
 

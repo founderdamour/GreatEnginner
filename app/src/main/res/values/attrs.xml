@@ -12,4 +12,18 @@
         <attr name="unreadNum" format="string"/>
         <attr name="itemStateSelected" format="boolean"/>
     </declare-styleable>
+
+    <declare-styleable name="HActionBar">
+        <attr name="textTitle" format="reference|string" />
+        <attr name="textRight" format="reference|string" />
+        <attr name="srcBackground" format="reference" />
+        <attr name="srcRight" format="reference" />
+        <attr name="function">
+            <flag name="button_left" value="1" />
+            <flag name="button_right" value="2" />
+            <flag name="text_title" value="4" />
+            <flag name="text_right" value="8" />
+        </attr>
+    </declare-styleable>
+
 </resources>
