@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-import com.yzz.great.BaseActivity;
+import com.yzz.great.base.BaseActivity;
 import com.yzz.great.R;
 import com.yzz.great.util.CommonUtils;
 

@@ -1,9 +1,15 @@
-package com.yzz.great
+package com.yzz.great.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.yzz.great.util.Constant
+import com.yzz.great.BuildConfig
+import com.yzz.great.R
+import com.yzz.great.base.BaseActivity
+import com.yzz.great.ui.tab.Home1Fragment
+import com.yzz.great.ui.tab.Home2Fragment
+import com.yzz.great.ui.tab.HomeFragment
+import com.yzz.great.ui.tab.MineFragment
+import com.yzz.great.base.Constant
 import com.yzz.great.view.MainTabItemView
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.ArrayList

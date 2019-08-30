@@ -1,7 +1,8 @@
-package com.yzz.great;
+package com.yzz.great.base;
 
 import android.app.Application;
 
+import com.yzz.great.BuildConfig;
 import com.yzz.great.util.exception.ExceptionCaught;
 
 public class App extends Application {

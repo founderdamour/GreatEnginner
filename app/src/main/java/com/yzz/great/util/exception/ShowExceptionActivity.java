@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.yzz.great.App;
+import com.yzz.great.base.App;
 import com.yzz.great.R;
 
 import java.io.ByteArrayOutputStream;

@@ -1,5 +1,8 @@
-package com.yzz.great.util;
+package com.yzz.great.base;
 
+/**
+ * 全局应用的常量定义
+ */
 public interface Constant {
 
     /**

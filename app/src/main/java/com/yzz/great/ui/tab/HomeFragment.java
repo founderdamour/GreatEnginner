@@ -1,4 +1,4 @@
-package com.yzz.great;
+package com.yzz.great.ui.tab;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class Home2Fragment extends Fragment {
+import com.yzz.great.R;
+
+/**
+ * 主页界面
+ */
+public class HomeFragment extends Fragment {
 
     private View rootView;
 
@@ -17,7 +22,7 @@ public class Home2Fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (rootView == null) {
-            rootView = inflater.inflate(R.layout.fragment_home2, container, false);
+            rootView = inflater.inflate(R.layout.fragment_home, container, false);
         }
         return rootView;
     }
