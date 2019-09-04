@@ -1,41 +1,33 @@
 package com.yzz.great.base;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.yzz.great.view.LoadingDialog;
 
 /**
- * 所有activity基类，必须继承
+ * 所有fragment的基类
  */
-@SuppressLint("Registered")
-public class BaseActivity extends AppCompatActivity {
+public class BaseFragment extends Fragment {
 
     private boolean mIsDestroy;
 
     private LoadingDialog loadingDialog;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mIsDestroy = false;
     }
 
     @Override
-    protected void onDestroy() {
-        mIsDestroy = true;
+    public void onDestroy() {
         super.onDestroy();
+        mIsDestroy = true;
     }
 
-    /**
-     * 返回
-     */
-    public void onBackClick() {
-        onBackPressed();
-    }
 
     /**
      * 显示加载框
@@ -75,8 +67,8 @@ public class BaseActivity extends AppCompatActivity {
         if (mIsDestroy) {
             return;
         }
-        if (loadingDialog == null) {
-            loadingDialog = new LoadingDialog(this);
+        if (loadingDialog == null && getActivity() != null) {
+            loadingDialog = new LoadingDialog(getActivity());
         }
         loadingDialog.setCanceledOnTouchOutside(isCancelable);
         loadingDialog.setTipMsg(tipMsg);
@@ -91,5 +83,4 @@ public class BaseActivity extends AppCompatActivity {
             loadingDialog.dismiss();
         }
     }
-
 }

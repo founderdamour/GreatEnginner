@@ -4,8 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-
-    <color name="white">#ffffffff</color>
-
+    <color name="white">#ffffff</color>
+    <color name="app_bg">#F7F7F7</color>
+    <color name="line">#ebebeb</color>
 
 </resources>
