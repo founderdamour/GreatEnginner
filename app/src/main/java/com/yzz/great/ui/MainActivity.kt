@@ -67,7 +67,7 @@ class MainActivity : BaseActivity(), MainTabItemView.OnTabItemStateChangeListene
             }
         }
         setIndexWithoutException(index)
-        showLoadingDialog()
+        // showLoadingDialog()
     }
 
     private fun setIndexWithoutException(index: Int) {

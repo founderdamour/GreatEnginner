@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
@@ -27,9 +28,11 @@ public class MainTabItemView extends FrameLayout {
 
     private View itemView;
 
-    private TextView tabItemView, unreadNumView;
+    private LinearLayout tabItemView;
 
-    private ImageView dotView;
+    private TextView unreadNumView, titleTv;
+
+    private ImageView dotView, iconIv;
 
     private String itemTitle, unreadNum;
 
@@ -68,6 +71,8 @@ public class MainTabItemView extends FrameLayout {
         tabItemView = itemView.findViewById(R.id.tabItemView);
         unreadNumView = itemView.findViewById(R.id.unreadNumView);
         dotView = itemView.findViewById(R.id.dotView);
+        iconIv = itemView.findViewById(R.id.iconIv);
+        titleTv = itemView.findViewById(R.id.titleTv);
     }
 
     private void initAttr(Context context, AttributeSet attrs) {
@@ -108,36 +113,42 @@ public class MainTabItemView extends FrameLayout {
 
     public void setItemTitle(String itemTitle) {
         if (TextUtils.isEmpty(itemTitle)) {
-            throw new RuntimeException("the title cannot be empty");
+            titleTv.setVisibility(GONE);
+        } else {
+            titleTv.setVisibility(VISIBLE);
+            this.itemTitle = itemTitle;
+            titleTv.setText(itemTitle);
         }
-        this.itemTitle = itemTitle;
-        tabItemView.setText(itemTitle);
     }
 
     public void setItemImg(Drawable itemImg) {
         if (itemImg == null) {
-            throw new RuntimeException("the title drawable cannot be empty");
+            iconIv.setVisibility(GONE);
+        } else {
+            iconIv.setVisibility(VISIBLE);
+            this.itemImg = itemImg;
+            iconIv.setImageDrawable(itemImg);
         }
-        this.itemImg = itemImg;
-        tabItemView.setCompoundDrawablesRelativeWithIntrinsicBounds(null, itemImg, null, null);
     }
 
     public void setItemImgSelected(Drawable itemImgSelected) {
         if (itemImgSelected == null) {
-            throw new RuntimeException("the title selected drawable cannot be empty");
+            iconIv.setVisibility(GONE);
+        } else {
+            iconIv.setVisibility(VISIBLE);
+            this.itemImgSelected = itemImgSelected;
+            iconIv.setImageDrawable(itemImgSelected);
         }
-        this.itemImgSelected = itemImgSelected;
-        tabItemView.setCompoundDrawablesRelativeWithIntrinsicBounds(null, itemImgSelected, null, null);
     }
 
     public void setItemTitleColor(@ColorInt int itemTitleColor) {
         this.itemTitleColor = itemTitleColor;
-        tabItemView.setTextColor(itemTitleColor);
+        titleTv.setTextColor(itemTitleColor);
     }
 
     public void setItemTitleColorSelected(@ColorInt int itemTitleColorSelected) {
         this.itemTitleColorSelected = itemTitleColorSelected;
-        tabItemView.setTextColor(itemTitleColorSelected);
+        titleTv.setTextColor(itemTitleColorSelected);
     }
 
 

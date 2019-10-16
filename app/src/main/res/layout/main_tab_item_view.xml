@@ -15,19 +15,35 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
+        <LinearLayout
             android:id="@+id/tabItemView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableTop="@mipmap/ic_tab_mine_selected"
-            android:drawablePadding="4dp"
-            android:textColor="#11d7aa"
-            android:textSize="15sp"
+            android:gravity="center"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="我的" />
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/iconIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@mipmap/ic_tab_mine_selected" />
+
+            <TextView
+                android:id="@+id/titleTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#11d7aa"
+                android:textSize="15sp"
+                tools:text="我的" />
+
+        </LinearLayout>
+
 
         <TextView
             android:id="@+id/unreadNumView"
