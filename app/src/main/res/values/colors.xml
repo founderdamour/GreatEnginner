@@ -8,4 +8,6 @@
     <color name="app_bg">#F7F7F7</color>
     <color name="line">#ebebeb</color>
 
+    <color name="transparent">#00000000</color>
+
 </resources>
