@@ -9,26 +9,26 @@ import java.io.InputStream;
  */
 public abstract class InputStreamAdapter implements InputStreamProvider {
 
-  private InputStream inputStream;
+    private InputStream inputStream;
 
-  @Override
-  public InputStream open() throws IOException {
-    close();
-    inputStream = openInternal();
-    return inputStream;
-  }
-
-  abstract InputStream openInternal() throws IOException;
-
-  @Override
-  public void close() {
-    if (inputStream != null) {
-      try {
-        inputStream.close();
-      } catch (IOException ignore) {
-      }finally {
-        inputStream = null;
-      }
+    @Override
+    public InputStream open() throws IOException {
+        close();
+        inputStream = openInternal();
+        return inputStream;
     }
-  }
+
+    abstract InputStream openInternal() throws IOException;
+
+    @Override
+    public void close() {
+        if (inputStream != null) {
+            try {
+                inputStream.close();
+            } catch (IOException ignore) {
+            } finally {
+                inputStream = null;
+            }
+        }
+    }
 }
